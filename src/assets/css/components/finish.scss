@@ -1,0 +1,291 @@
+.logo {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 175px;
+  z-index: 200;
+}
+
+.finish {
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+  z-index: 300;
+  
+  &__top {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	text-align: center;
+	font-size: 80px;
+	line-height: 90px;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 1;
+	color: $red;
+	
+	span {
+	  position: absolute;
+	  display: block;
+	  left: 0;
+	  width: 100%;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  white-space: nowrap;
+	  padding: 25px 0;
+	}
+  }
+  
+  &__logo {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(0.7);
+	
+	img {
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	  width: 1360px;
+	  max-width: 100%;
+	  transform: scale(1) translate(-50%, -50%);
+	}
+  }
+  
+  &__text {
+	text-transform: uppercase;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
+	opacity: 0;
+	visibility: hidden;
+	
+	p {
+	  text-align: center;
+	  white-space: nowrap;
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  width: 100%;
+	  padding: 25px 0;
+	}
+	
+	&--1 {
+	  p {
+		margin-top: 265px;
+		font-size: 30px;
+		line-height: 40px;
+	  }
+	}
+	
+	&--2 {
+	  p {
+		font-size: 60px;
+		line-height: 70px;
+	  }
+	}
+	
+	&--3 {
+	  z-index: 3;
+	  
+	  p {
+		font-size: 80px;
+		line-height: 90px;
+		color: $red;
+	  }
+	}
+  }
+  
+  &__video {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	object-position: center;
+	z-index: 2;
+  }
+  
+  &-footer {
+	position: absolute;
+	left: 50%;
+	bottom: 69px;
+	transform: translateX(-50%);
+	width: 100%;
+	z-index: 3;
+	opacity: 0;
+	visibility: hidden;
+	
+	&__wrap {
+	  display: flex;
+	  justify-content: space-around;
+	  max-width: 1132px;
+	  text-align: center;
+	  margin: 0 auto;
+	}
+	
+	&__item {
+	  &-text {
+		display: block;
+		font-size: 20px;
+		line-height: 30px;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+	  }
+	  
+	  &-link {
+		display: inline-block;
+		padding: 20px 40px;
+		font-size: 12px;
+		line-height: 12px;
+		background: $red;
+		text-transform: uppercase;
+		color: $white;
+		text-decoration: none;
+	  }
+	}
+  }
+  
+  &.start {
+	animation-name: none;
+	
+	& + .logo {
+	  .finish__top {
+		opacity: 1;
+		visibility: visible;
+		transition: all .3s;
+		animation-delay: 3.5s;
+		animation-duration: .2s;
+		animation-name: ArtOut;
+		animation-fill-mode: forwards;
+		
+		span {
+		  animation-delay: 2s;
+		  animation-name: PuzzleLineTop;
+		  animation-duration: .5s;
+		  animation-fill-mode: forwards;
+		}
+	  }
+	  
+	  .finish__logo {
+		animation-delay: 3.8s;
+		animation-duration: .3s;
+		animation-name: LogoShow;
+		animation-fill-mode: forwards;
+		
+		img {
+		  //width: 440px;
+		  animation-delay: 7s;
+		  animation-duration: .7s;
+		  animation-name: Logo;
+		  animation-fill-mode: forwards;
+		}
+		
+		@keyframes LogoShow {
+		  from {
+			opacity: 0;
+			visibility: hidden;
+			transform: scale(0.7);
+		  }
+		  to {
+			opacity: 1;
+			visibility: visible;
+			transform: scale(1);
+		  }
+		}
+		
+		@keyframes Logo {
+		  from {
+			left: 50%;
+			top: 50%;
+			width: 1360px;
+		  }
+		  to {
+			width: 440px;
+			top: 90px;
+		  }
+		}
+	  }
+	}
+	
+	.finish__text--1 {
+	  animation-delay: 5s;
+	  animation-duration: .5s;
+	  animation-name: Show;
+	  animation-fill-mode: forwards;
+	  
+	  p {
+		animation-delay: 7s;
+		animation-duration: .7s;
+		animation-name: text1;
+		animation-fill-mode: forwards;
+	  }
+	  
+	  @keyframes text1 {
+		from {
+		  top: 50%;
+		  transform: translateY(-50%);
+		  margin-top: 265px;
+		  font-size: 30px;
+		  line-height: 40px;
+		}
+		to {
+		  top: 160px;
+		  transform: translateY(0px);
+		  margin-top: 0;
+		  font-size: 16px;
+		  line-height: 26px;
+		}
+	  }
+	}
+	
+	.finish__text--2 {
+	  animation-delay: 8s;
+	  animation-duration: .5s;
+	  animation-name: Show;
+	  animation-fill-mode: forwards;
+	  
+	  p {
+		animation-delay: 15s;
+		animation-duration: .2s;
+		animation-name: ArtOut;
+		animation-fill-mode: forwards;
+	  }
+	}
+	
+	.finish__text--3 {
+	  animation-delay: 16s;
+	  animation-duration: .5s;
+	  animation-name: Show;
+	  animation-fill-mode: forwards;
+	}
+	
+	.finish-footer {
+	  animation-delay: 30s;
+	  animation-duration: .5s;
+	  animation-name: Show;
+	  animation-fill-mode: forwards;
+	}
+	
+	&.play {
+	  .finish__text--3 {
+		opacity: 0.2 !important;
+	  }
+	  
+	  .finish__video {
+		display: block;
+	  }
+	}
+  }
+}
+
+

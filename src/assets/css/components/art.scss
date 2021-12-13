@@ -1,0 +1,276 @@
+.art {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  visibility: hidden;
+  
+  &__image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	object-position: center;
+	opacity: 0;
+	visibility: hidden;
+  }
+  
+  &__next {
+	position: absolute;
+	width: calc(100vw - 299px);
+	height: calc(100vh - 299px);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	object-fit: cover;
+	object-position: center;
+	opacity: 0;
+	visibility: hidden;
+  }
+  
+  &__line {
+	opacity: 0;
+	visibility: hidden;
+	
+	z-index: 2;
+	padding: 25px 0;
+	width: 100vw;
+	font-size: 40px;
+	line-height: 50px;
+	text-align: center;
+	position: absolute;
+	
+	&--bot {
+	  left: 50%;
+	  top: 50%;
+	  transform: translate(-50%, -50%);
+	  text-align: center;
+	  font-size: 80px;
+	  line-height: 90px;
+	}
+	
+	&--left {
+	  width: 100vh;
+	  left: 0;
+	  top: 100%;
+	  transform: rotate(-90deg);
+	  transform-origin: left top;
+	}
+	
+	&--top {
+	  top: 0;
+	  left: 0;
+	}
+	
+	&--right {
+	  width: 100vh;
+	  top: 100%;
+	  right: 0;
+	  left: auto;
+	  transform: rotate(90deg);
+	  transform-origin: right top;
+	}
+  }
+  
+  &__border {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1;
+	
+	&-line {
+	  position: absolute;
+	  right: 0;
+	  top: 0;
+	  height: 150px;
+	  width: 0;
+	  background: #121212;
+	}
+	
+	&--bot {
+	  bottom: 0;
+	  top: auto;
+	}
+	
+	&--left {
+	  right: auto;
+	  left: 0;
+	  top: 100%;
+	  transform: rotate(-90deg);
+	  transform-origin: left top;
+	}
+	
+	&--top {
+	  left: 0;
+	}
+	
+	&--right {
+	  width: 0;
+	  top: 0;
+	  right: 150px;
+	  left: auto;
+	  transform: rotate(-90deg);
+	  transform-origin: right top;
+	}
+  }
+  
+  &.start {
+	opacity: 1;
+	visibility: visible;
+	animation-delay: 11s;
+	animation-duration: .2s;
+	animation-name: ArtOut;
+	animation-fill-mode: forwards;
+	
+	@keyframes ArtOut {
+	  from {
+		opacity: 1;
+		visibility: visible;
+	  }
+	  to {
+		opacity: 0;
+		visibility: hidden;
+	  }
+	}
+	
+	.art__image {
+	  animation-delay: 2s;
+	  animation-name: Show;
+	  animation-duration: .5s;
+	  animation-fill-mode: forwards;
+	}
+	
+	.art__line--bot {
+	  opacity: 1;
+	  visibility: visible;
+	  transition: all .3s;
+	  animation-delay: 2s;
+	  animation-name: ArtLineBot;
+	  animation-duration: .5s;
+	  animation-fill-mode: forwards;
+	}
+	
+	@keyframes ShowLineBotRed {
+	  from {
+		left: 150%;
+	  }
+	  to {
+		left: 50%;
+	  }
+	}
+	
+	@keyframes ArtLineBot {
+	  from {
+		font-size: 80px;
+		line-height: 90px;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	  }
+	  to {
+		font-size: 40px;
+		line-height: 50px;
+		top: 100%;
+		transform: translate(-50%, -100%);
+	  }
+	}
+	
+	.art__line--left {
+	  animation-delay: 3s;
+	  animation-name: Show;
+	  animation-duration: .2s;
+	  animation-fill-mode: forwards;
+	}
+
+	.art__line--top {
+	  animation-delay: 3.5s;
+	  animation-name: Show;
+	  animation-duration: .2s;
+	  animation-fill-mode: forwards;
+	}
+
+	.art__line--right {
+	  animation-delay: 4s;
+	  animation-name: Show;
+	  animation-duration: .2s;
+	  animation-fill-mode: forwards;
+	}
+	
+	.art__next {
+	  animation-delay: 7s;
+	  animation-name: Show;
+	  animation-duration: 1s;
+	  animation-fill-mode: forwards;
+	}
+	
+	@keyframes Show {
+	  from {
+		opacity: 0;
+		visibility: hidden;
+	  }
+	  to {
+		opacity: 1;
+		visibility: visible;
+	  }
+	}
+	
+	@keyframes ShowLineRed {
+	  from {
+		left: -100%;
+	  }
+	  to {
+		left: 50%;
+	  }
+	}
+	
+	.art__border--bot {
+	  animation-delay: 2.5s;
+	  animation-name: ArtLineBefore;
+	  animation-duration: .5s;
+	  animation-fill-mode: forwards;
+	}
+	
+	.art__border--left {
+	  animation-delay: 3s;
+	  animation-name: ArtLineBeforeLeftRight;
+	  animation-duration: .5s;
+	  animation-fill-mode: forwards;
+	}
+	
+	.art__border--top {
+	  animation-delay: 3.5s;
+	  animation-name: ArtLineBefore;
+	  animation-duration: .5s;
+	  animation-fill-mode: forwards;
+	}
+	
+	.art__border--right {
+	  animation-delay: 4s;
+	  animation-name: ArtLineBeforeLeftRight;
+	  animation-duration: .5s;
+	  animation-fill-mode: forwards;
+	}
+	
+	@keyframes ArtLineBefore {
+	  from {
+		width: 0;
+	  }
+	  to {
+		width: 100%;
+	  }
+	}
+	@keyframes ArtLineBeforeLeftRight {
+	  from {
+		width: 0;
+	  }
+	  to {
+		width: 100vh;
+	  }
+	}
+  }
+}

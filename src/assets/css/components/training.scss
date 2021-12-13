@@ -1,0 +1,48 @@
+.training {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $bg;
+  z-index: 2;
+  
+  &__logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding-top: 25px;
+    z-index: 10;
+    
+    img {
+      width: 440px;
+    }
+  }
+  
+  &__lock {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    object-position: 50%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
+  
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: 50%;
+  }
+}

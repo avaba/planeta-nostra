@@ -1,0 +1,15 @@
+@import "_tools/reset";
+@import "_tools/variables";
+@import "_tools/mixins";
+@import "_tools/_utilities";
+
+@import "_base/general";
+@import "_base/fonts";
+@import "_base/custom";
+
+@import "components/preloader";
+@import "components/art";
+@import "components/puzzle";
+@import "components/finish";
+@import "components/footer";
+@import "components/training";
