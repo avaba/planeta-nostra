@@ -37,7 +37,7 @@ const Scene = () => Art.forEach((e, i) => {
             setTimeout(() => {
               Finish[0].classList.remove('play');
             }, 8000);
-          }, 22000);
+          }, 20000);
         }, 16500);
       }
     }
@@ -60,7 +60,7 @@ setTimeout(() => {
         setTimeout(() => {
           Finish[0].classList.remove('play');
         }, 8000);
-      }, 22000);
+      }, 20000);
     }
     if (Art[0] === undefined && Puzzle[0] !== undefined) {
       setTimeout(() => {
