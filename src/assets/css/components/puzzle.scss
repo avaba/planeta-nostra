@@ -109,7 +109,7 @@
 	}
 	
 	.puzzle__bot {
-	  animation-delay: 5s;
+	  animation-delay: 5.5s;
 	  animation-name: Show;
 	  animation-duration: .3s;
 	  animation-fill-mode: forwards;
@@ -121,7 +121,7 @@
 		animation-fill-mode: forwards;
 
 		&:before {
-		  animation-delay: 8s;
+		  animation-delay: 9s;
 		  animation-name: ArtLineBefore;
 		  animation-duration: .5s;
 		  animation-fill-mode: forwards;

@@ -6,43 +6,173 @@
   height: 100vh;
   background: $bg;
   z-index: 2;
-  
-  &__logo {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    text-align: center;
-    padding-top: 25px;
-    z-index: 10;
-    
-    img {
-      width: 440px;
-    }
-  }
-  
-  &__lock {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    object-position: 50%;
-    width: 100vw;
-    height: 100vh;
+  display: flex;
+
+  &__wrap {
+    min-width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #000;
+    opacity: 1;
+    visibility: visible;
   }
   
-  &__image {
+  &__title {
+    text-align: center;
+    font-size: 110px;
+    line-height: 120px;
+    position: relative;
+    z-index: 10;
+  }
+  
+  &__bg {
     position: absolute;
     left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    object-position: 50%;
+    object-position: center;
+    transform: scale(.8);
+    transition: all 2s;
+  }
+  
+  &__circle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    z-index: 5;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 33vw;
+      height: 33vw;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+      background: transparent;
+      border: 1000px solid $bg;
+      transition: all 2s;
+    }
+  }
+  
+  &__down {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    padding: 27px 37px;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  &__video {
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    &:before {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100vw;
+      height: 0;
+      background: $bg;
+    }
+    
+    &:after {
+      content: '';
+      position: absolute;
+      top: auto;
+      bottom: -100%;
+      left: 0;
+      width: 100vw;
+      height: 0;
+      background: $bg;
+    }
+    
+    video {
+      opacity: 0;
+      visibility: hidden;
+      width: 100vw;
+      object-fit: cover;
+      object-position: center;
+      position: relative;
+      z-index: 2;
+      display: block;
+    }
+  }
+  
+  &.start {
+    .training__down {
+      animation-duration: .5s;
+      animation-name: ArtOut;
+      animation-fill-mode: forwards;
+    }
+    
+    .training__wrap {
+      animation-delay: 2s;
+      animation-duration: 1s;
+      animation-name: OutTitle;
+      animation-fill-mode: forwards;
+      z-index: 300;
+  
+      @keyframes OutTitle {
+        from {
+          opacity: 1;
+          visibility: visible;
+        }
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+    
+    .training__circle {
+      &:before {
+        transition: all 5.5s ease-in-out;
+        width: 130vw;
+        height: 130vw;
+      }
+    }
+    
+    .training__bg {
+      transition: all 2.3s ease-in;
+      transform: scale(1);
+    }
+    
+    .training__video {
+      &:before, &:after {
+        animation-delay: 5s;
+        animation-name: VideoLine;
+        animation-duration: 2.5s;
+        animation-fill-mode: forwards;
+      }
+  
+      video.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @keyframes VideoLine {
+        from {
+          height: 0;
+        }
+        to {
+          height: 100%;
+        }
+      }
+    }
   }
 }

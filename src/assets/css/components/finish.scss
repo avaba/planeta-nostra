@@ -10,8 +10,12 @@
 .finish {
   min-height: 100vh;
   min-width: 100vw;
-  position: relative;
   z-index: 300;
+  
+  &.scroll-down {
+	transition: all 2s;
+	transform: translateY(-100%);
+  }
   
   &__top {
 	position: absolute;
@@ -151,6 +155,14 @@
 		text-transform: uppercase;
 		color: $white;
 		text-decoration: none;
+		transition: all .3s ease;
+		border: 0;
+		
+		&:hover {
+		  transition: all .3s ease;
+		  background: $white;
+		  color: $bg;
+		}
 	  }
 	}
   }
@@ -158,61 +170,59 @@
   &.start {
 	animation-name: none;
 	
-	& + .logo {
-	  .finish__top {
-		opacity: 1;
-		visibility: visible;
-		transition: all .3s;
-		animation-delay: 3.5s;
-		animation-duration: .2s;
-		animation-name: ArtOut;
+	.finish__top {
+	  opacity: 1;
+	  visibility: visible;
+	  transition: all .3s;
+	  animation-delay: 3.5s;
+	  animation-duration: .2s;
+	  animation-name: ArtOut;
+	  animation-fill-mode: forwards;
+	  
+	  span {
+		animation-delay: 2s;
+		animation-name: PuzzleLineTop;
+		animation-duration: .5s;
 		animation-fill-mode: forwards;
-		
-		span {
-		  animation-delay: 2s;
-		  animation-name: PuzzleLineTop;
-		  animation-duration: .5s;
-		  animation-fill-mode: forwards;
+	  }
+	}
+	
+	.finish__logo {
+	  animation-delay: 3.8s;
+	  animation-duration: .3s;
+	  animation-name: LogoShow;
+	  animation-fill-mode: forwards;
+	  
+	  img {
+		//width: 440px;
+		animation-delay: 7s;
+		animation-duration: .7s;
+		animation-name: Logo;
+		animation-fill-mode: forwards;
+	  }
+	  
+	  @keyframes LogoShow {
+		from {
+		  opacity: 0;
+		  visibility: hidden;
+		  transform: scale(0.7);
+		}
+		to {
+		  opacity: 1;
+		  visibility: visible;
+		  transform: scale(1);
 		}
 	  }
 	  
-	  .finish__logo {
-		animation-delay: 3.8s;
-		animation-duration: .3s;
-		animation-name: LogoShow;
-		animation-fill-mode: forwards;
-		
-		img {
-		  //width: 440px;
-		  animation-delay: 7s;
-		  animation-duration: .7s;
-		  animation-name: Logo;
-		  animation-fill-mode: forwards;
+	  @keyframes Logo {
+		from {
+		  left: 50%;
+		  top: 50%;
+		  width: 1360px;
 		}
-		
-		@keyframes LogoShow {
-		  from {
-			opacity: 0;
-			visibility: hidden;
-			transform: scale(0.7);
-		  }
-		  to {
-			opacity: 1;
-			visibility: visible;
-			transform: scale(1);
-		  }
-		}
-		
-		@keyframes Logo {
-		  from {
-			left: 50%;
-			top: 50%;
-			width: 1360px;
-		  }
-		  to {
-			width: 440px;
-			top: 90px;
-		  }
+		to {
+		  width: 440px;
+		  top: 90px;
 		}
 	  }
 	}
@@ -274,6 +284,7 @@
 	  animation-duration: .5s;
 	  animation-name: Show;
 	  animation-fill-mode: forwards;
+	  z-index: 300;
 	}
 	
 	&.play {
@@ -285,6 +296,24 @@
 		display: block;
 	  }
 	}
+  }
+}
+
+.video-hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  
+  &.play {
+	animation-name: Show;
+	animation-fill-mode: forwards;
   }
 }
 
