@@ -174,7 +174,7 @@
 	  opacity: 1;
 	  visibility: visible;
 	  transition: all .3s;
-	  animation-delay: 3.5s;
+	  animation-delay: 1s;
 	  animation-duration: .2s;
 	  animation-name: ArtOut;
 	  animation-fill-mode: forwards;
@@ -188,14 +188,14 @@
 	}
 	
 	.finish__logo {
-	  animation-delay: 3.8s;
+	  animation-delay: 1s;
 	  animation-duration: .3s;
 	  animation-name: LogoShow;
 	  animation-fill-mode: forwards;
 	  
 	  img {
 		//width: 440px;
-		animation-delay: 7s;
+		animation-delay: 1s;
 		animation-duration: .7s;
 		animation-name: Logo;
 		animation-fill-mode: forwards;
@@ -228,13 +228,13 @@
 	}
 	
 	.finish__text--1 {
-	  animation-delay: 5.5s;
+	  animation-delay: 1s;
 	  animation-duration: .5s;
 	  animation-name: Show;
 	  animation-fill-mode: forwards;
 	  
 	  p {
-		animation-delay: 7s;
+		animation-delay: 1s;
 		animation-duration: .7s;
 		animation-name: text1;
 		animation-fill-mode: forwards;
@@ -259,13 +259,13 @@
 	}
 	
 	.finish__text--2 {
-	  animation-delay: 8s;
+	  animation-delay: 1s;
 	  animation-duration: .5s;
 	  animation-name: Show;
 	  animation-fill-mode: forwards;
 	  
 	  p {
-		animation-delay: 13s;
+		animation-delay: 1s;
 		animation-duration: .2s;
 		animation-name: ArtOut;
 		animation-fill-mode: forwards;
@@ -273,14 +273,14 @@
 	}
 	
 	.finish__text--3 {
-	  animation-delay: 14s;
+	  animation-delay: 1s;
 	  animation-duration: .5s;
 	  animation-name: Show;
 	  animation-fill-mode: forwards;
 	}
 	
 	.finish-footer {
-	  animation-delay: 28s;
+	  animation-delay: 1s;
 	  animation-duration: .5s;
 	  animation-name: Show;
 	  animation-fill-mode: forwards;

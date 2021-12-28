@@ -3,176 +3,81 @@
 {% extends "_html/_base/_layouts/_default.html" %}
 
 {% block content %}
-<!--<div class="art scene">-->
-<!--  <div class="art__border">-->
-<!--    <div class="art__border-line art__border&#45;&#45;bot"></div>-->
-<!--    <div class="art__border-line art__border&#45;&#45;left"></div>-->
-<!--    <div class="art__border-line art__border&#45;&#45;top"></div>-->
-<!--    <div class="art__border-line art__border&#45;&#45;right"></div>-->
-<!--  </div>-->
-<!--  <div class="art__line art__line&#45;&#45;bot">-->
-<!--    YOU DON’T SEE <br> YOU DON’T KNOW-->
-<!--  </div>-->
-<!--  <div class="art__line art__line&#45;&#45;left">-->
-<!--    YOU DON’T SEE <br> YOU DON’T KNOW-->
-<!--  </div>-->
-<!--  <div class="art__line art__line&#45;&#45;top">-->
-<!--    YOU DON’T SEE <br> YOU DON’T KNOW-->
-<!--  </div>-->
-<!--  <div class="art__line art__line&#45;&#45;right">-->
-<!--    YOU DON’T SEE <br> YOU DON’T KNOW-->
-<!--  </div>-->
-<!--  <img class="art__image" src="./assets/img/art1.png" alt="">-->
-<!--  <img class="art__next" src="./assets/img/art1-1.png" alt="">-->
-<!--</div>-->
 
-<!--<div class="art scene">-->
-<!--  <div class="art__border">-->
-<!--    <div class="art__border-line art__border&#45;&#45;bot"></div>-->
-<!--    <div class="art__border-line art__border&#45;&#45;left"></div>-->
-<!--    <div class="art__border-line art__border&#45;&#45;top"></div>-->
-<!--    <div class="art__border-line art__border&#45;&#45;right"></div>-->
-<!--  </div>-->
-<!--  <div class="art__line art__line&#45;&#45;bot">-->
-<!--    THE WORLD<br> YOU LIVE IN-->
-<!--  </div>-->
-<!--  <div class="art__line art__line&#45;&#45;left">-->
-<!--    THE WORLD<br> YOU LIVE IN-->
-<!--  </div>-->
-<!--  <div class="art__line art__line&#45;&#45;top">-->
-<!--    THE WORLD<br> YOU LIVE IN-->
-<!--  </div>-->
-<!--  <div class="art__line art__line&#45;&#45;right">-->
-<!--    THE WORLD<br> YOU LIVE IN-->
-<!--  </div>-->
-<!--  <img class="art__image" src="./assets/img/art2.png" alt="">-->
-<!--  <img class="art__next" src="./assets/img/art2-1.png" alt="">-->
-<!--</div>-->
+<div class="video">
+  <span class="video__skip btn">skip intro</span>
+  <video class="video__item" playsinline controls>
+<!--    <source srcset="./assets/video/1284_track.mp4 1023w,-->
+<!--                    ./assets/video/1024_track.mp4 1199w,-->
+<!--                    ./assets/video/1440_track.mp4 1599w,-->
+<!--                    ./assets/video/1920_track.mp4 1600w"-->
+<!--            sizes="(max-width: 1024px) 1023px,-->
+<!--                    (max-width: 1200px) 1199px,-->
+<!--                    (max-width: 1600px) 1599px,-->
+<!--                    1600px"-->
+<!--            src="./asdasda"-->
+<!--            type='video/mp4'-->
+<!--    />-->
+    <source src="./assets/video/1920_track.mp4" type="video/mp4;" media="(min-width: 1600px)">
+  </video>
+</div>
 
-<!--<div class="art scene">-->
-<!--  <div class="art__border">-->
-<!--    <div class="art__border-line art__border&#45;&#45;bot"></div>-->
-<!--    <div class="art__border-line art__border&#45;&#45;left"></div>-->
-<!--    <div class="art__border-line art__border&#45;&#45;top"></div>-->
-<!--    <div class="art__border-line art__border&#45;&#45;right"></div>-->
-<!--  </div>-->
-<!--  <div class="art__line art__line&#45;&#45;bot">-->
-<!--    the WORLD YOUR <br> ANCESTORS LIVED IN-->
-<!--  </div>-->
-<!--  <div class="art__line art__line&#45;&#45;left">-->
-<!--    the WORLD YOUR <br> ANCESTORS LIVED IN-->
-<!--  </div>-->
-<!--  <div class="art__line art__line&#45;&#45;top">-->
-<!--    the WORLD YOUR <br> ANCESTORS LIVED IN-->
-<!--  </div>-->
-<!--  <div class="art__line art__line&#45;&#45;right">-->
-<!--    the WORLD YOUR <br> ANCESTORS LIVED IN-->
-<!--  </div>-->
-<!--  <img class="art__image" src="./assets/img/art3.png" alt="">-->
-<!--  <img class="art__next" src="./assets/img/art3-1.png" alt="">-->
-<!--</div>-->
-
-<!--<div class="art puzzle">-->
-<!--  <div class="puzzle__top"><span>PEOPLE WOULD NO LONGER EXIST <br> IF IT WASN’T THE DEFENDERS</span></div>-->
-<!--  <div class="puzzle__bot"><span>BUT THE DEFENCE <br> IS WEAKENING</span></div>-->
-<!--  <div class="puzzle__image">-->
-<!--    <div class="puzzle__image-col">-->
-<!--      <img src="./assets/img/art4-1.png" alt="">-->
-<!--    </div>-->
-<!--    <div class="puzzle__image-col">-->
-<!--      <img src="./assets/img/art4-2.png" alt="">-->
-<!--    </div>-->
-<!--    <div class="puzzle__image-col">-->
-<!--      <img src="./assets/img/art4-3.png" alt="">-->
-<!--    </div>-->
-<!--    <div class="puzzle__image-col">-->
-<!--      <img src="./assets/img/art4-4.png" alt="">-->
-<!--    </div>-->
-<!--    <div class="puzzle__image-col">-->
-<!--      <img src="./assets/img/art4-5.png" alt="">-->
-<!--    </div>-->
-<!--    <div class="puzzle__image-col">-->
-<!--      <img src="./assets/img/art4-6.png" alt="">-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <img class="art__image" src="./assets/img/art4.png" alt="">-->
-<!--</div>-->
-
-<div class="art finish">
-  <div class="finish__top"><span>NO MORE IGNORANCE!</span></div>
-  <div class="finish__logo">
-    <img src="./assets/img/logo.png" alt="">
-  </div>
-
-  <div class="finish__text finish__text--1">
-    <p>human Resistance Organization</p>
-  </div>
-  <div class="finish__text finish__text--2">
-    <p>JOIN AND GET ACCESS TO SECRET <br> KNOWLEDGE AND TECHNOLOGIES, PUT ON <br> YOUR ARMOR AND GRAB YOUR WEAPONS</p>
-  </div>
-  <div class="finish__text finish__text--3">
-    <p>KICK THE ASSES OF THESE <br> DAMNED CHTONIANS, WHO ARE <br> HIDING OUT AND SECRETLY KILLING <br> US ON THE
-      STREETS OF OUR CITIES!</p>
-  </div>
-
-  <video class="finish__video" autoplay muted>
-    <source src="./assets/video/video.mp4#t=1" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+<div class="home">
+  <video class="home__hover" muted playsinline>
+    <source src="./assets/video/video-hover.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
   </video>
 
-  <video class="video-hover" muted>
-    <source src="./assets/video/video-hover.mp4#t=3" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-  </video>
+  <div class="home__logo">
+    <a href="/"><img class="home__logo-img" src="./assets/img/logo.png" alt=""></a>
+    <p class="home__logo-descriptor">human Resistance Organization</p>
+  </div>
 
-  <div class="finish-footer">
-    <div class="finish-footer__wrap">
-      <div class="finish-footer__item">
-        <span class="finish-footer__item-text">Visit the Resistance <br> Training Center</span>
-        <button data-section="training" class="finish-footer__item-link">get started</button>
-      </div>
-      <div class="finish-footer__item">
-        <span class="finish-footer__item-text">Join the ranks of <br> the PLANETA NOSTRA</span>
-        <button data-section="planeta" class="finish-footer__item-link">get started</button>
-      </div>
-      <div class="finish-footer__item">
-        <span class="finish-footer__item-text">Pre-registration for <br> NFT XR equipment</span>
-        <button data-section="training" class="finish-footer__item-link">get started</button>
-      </div>
+  <div class="home__text">
+    <p>
+      <b>KICK THE ASSES</b> OF THESE <br> DAMNED CHTONIANS, WHO ARE <br> HIDING OUT AND SECRETLY <b>KILLING <br>
+      US</b> ON THE STREETS OF OUR CITIES!
+    </p>
+  </div>
+
+  <div class="home-btn">
+    <div class="home-btn__item">
+      <p class="home-btn__item-title">Visit the Resistance <br> Training Center</p>
+      <a href="#" class="btn lock">get started</a>
     </div>
+    <div class="home-btn__item">
+      <p class="home-btn__item-title">Join the ranks of <br> the PLANETA NOSTRA</p>
+      <a href="#" class="btn" id="subscribe">get started</a>
+    </div>
+    <div class="home-btn__item">
+      <p class="home-btn__item-title">Pre-registration for <br> NFT XR equipment</p>
+      <a href="#" class="btn lock">get started</a>
+    </div>
+  </div>
+
+  <div class="home-footer">
+    <p>
+      Powered by <span>Spheroid Universe</span> <br>© Spheroid Universe 2021
+    </p>
+  </div>
+
+  <div class="modal">
+    <span class="modal__close"><img src="./assets/img/close.svg" alt=""></span>
+    <form class="modal__form">
+      <h2 class="modal__title">Join the ranks of <br> the PLANETA NOSTRA</h2>
+
+      <div class="modal__label">
+        <input class="modal__label-input" type="email" placeholder="E-mail" required>
+        <button class="modal__label-btn btn">subscribe</button>
+      </div>
+
+      <div class="modal__social">
+        <a href="#"><img src="./assets/img/discord.svg" alt=""></a>
+        <a href="#"><img src="./assets/img/twitter.svg" alt=""></a>
+      </div>
+
+    </form>
   </div>
 </div>
 
-<div class="get-started">
-  <div class="header">
-    <div class="header__link">
-      <a class="active" href="#">Training Center</a>
-      <a href="#">Join the ranks</a>
-    </div>
-    <div class="header__logo"><img src="./assets/img/logo.png" alt=""></div>
-    <div class="header__link">
-      <a href="#">NFT XR equipment</a>
-      <a href="#">gallery</a>
-    </div>
-  </div>
-
-  <div class="training get-started__section">
-    <img class="training__bg" src="./assets/img/training.png" alt="">
-    <div class="training__circle"></div>
-
-    <div class="training__wrap">
-      <h2 class="training__title">Visit the Resistance <br> Training Center</h2>
-    </div>
-
-    <div class="training__down">
-      <img src="./assets/img/down.svg" alt="">
-      <img src="./assets/img/down.svg" alt="">
-    </div>
-
-    <div class="training__video">
-      <video muted>
-        <source src="./assets/video/training.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-      </video>
-    </div>
-  </div>
-</div>
 
 {% endblock %}

@@ -1,13 +1,53 @@
 body {
   font-family: 'Aeonik', sans-serif;
-  background: #121212;
-  color: #EEEEEE;
+  background: $bg;
+  color: $white;
   text-transform: uppercase;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
+
+video::-webkit-media-controls {
+  display: none;
+}
+
 
 .site {
   position: relative;
   overflow: hidden;
   min-width: 100vw;
   min-height: 100vh;
+}
+
+.btn {
+  display: inline-block;
+  background: $red;
+  font-size: 14px;
+  line-height: 14px;
+  color: $white;
+  text-decoration: none;
+  padding: 25px 45px;
+  transition: all .2s;
+  position: relative;
+  
+  &.lock {
+    &:before {
+      content: '';
+      position: absolute;
+      right: 100%;
+      margin-right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 14px;
+      width: 10.5px;
+      background-image: url('../img/lock.svg');
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  
+  &:focus {
+	outline: none;
+  }
 }

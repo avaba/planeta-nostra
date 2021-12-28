@@ -1,0 +1,89 @@
+.video {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  background: $bg;
+  left: 0;
+  top: 0;
+  z-index: 888;
+  
+  &__skip {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    padding: 8px;
+    font-size: 18px;
+    line-height: 18px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    background: $white;
+    color: $bg;
+    
+    &.show {
+      animation-delay: 5s;
+      animation-name: Show;
+      animation-duration: .3s;
+      animation-fill-mode: forwards;
+    }
+  }
+  
+  &.hide {
+    display: none;
+  }
+  
+  &__item {
+    height: 100%;
+    width: 100vw;
+    object-fit: cover;
+  }
+  
+  &__1920 {
+    display: block;
+  }
+  
+  @media screen and (max-width: 1600px) {
+    &__skip {
+      font-size: 16px;
+      line-height: 16px;
+    }
+    
+    &__1920 {
+      display: none;
+    }
+    &__1440 {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 1439.98px) {
+    &__skip {
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 1199.98px) {
+    &__1440 {
+      display: none;
+    }
+    &__1024 {
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 1023.98px) {
+    &__skip {
+      font-size: 10px;
+      line-height: 10px;
+      top: 20px;
+      right: 20px;
+    }
+    &__1024 {
+      display: none;
+    }
+    &__375 {
+      display: block;
+    }
+  }
+}

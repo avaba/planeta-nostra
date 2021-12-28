@@ -1,0 +1,22 @@
+.scroll-content {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: all 2s;
+  
+  &__wrap {
+    &--section {
+      &:nth-of-type(1) {
+        transform: translateY(0);
+      }
+      &:nth-of-type(2) {
+        transform: translateY(100%);
+      }
+      &:nth-of-type(3) {
+        transform: translateY(200%);
+      }
+    }
+  }
+}

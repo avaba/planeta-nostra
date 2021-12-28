@@ -1,112 +1,144 @@
+import VideoContext from 'videocontext'
+
+const date = new Date(Date.now() + 96400e5).toUTCString();
+const VideoContainer = document.querySelector('.video');
+const VideoStart = document.querySelector('.video__item');
+const GetLink = document.querySelectorAll('.home-btn .btn.lock');
+const VideoHover = document.querySelector('.home__hover');
 const Preloader = document.querySelector('.preloader');
 const PreloaderAnswer = document.querySelector('.preloader__answer');
-const Art = document.querySelectorAll('.art.scene');
-const Puzzle = document.querySelectorAll('.puzzle');
-const Finish = document.querySelectorAll('.finish');
-const Video = document.querySelector('.video-hover');
-const GetLink = document.querySelectorAll('.finish-footer__item-link');
-const Training = document.querySelector('.training');
-const VideoTraining = document.querySelector('.training__video video');
-const GetStarted = document.querySelector('.get-started')
-const GetStartedSection = document.querySelectorAll('.get-started__section')
-let Count = 0;
-let GetStartedActive = 0;
+const Play = document.querySelector('#play');
+const Width = window.innerWidth;
+const VideoSkip = document.querySelector('.video__skip');
+const Subscribe = document.querySelector('#subscribe');
+const body = document.querySelector('body');
+const home = document.querySelector('.home');
 
-GetLink.forEach((item, index) => {
-  item.addEventListener('click', () => {
-    const data = item.getAttribute('data-section')
-    console.log(data)
-    Finish[0].classList.add('scroll-down');
-    GetStarted.classList.add('scroll-down')
-  });
-});
+function get_cookie (cookie_name) {
+  const results = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
 
-Training.addEventListener('click', () => {
-  Training.classList.add('start');
-  setTimeout(() => {
-    VideoTraining.classList.add('show');
-    VideoTraining.play();
-  }, 7500);
-});
+  if (results)
+    return (unescape(results[2]));
+  else
+    return null;
+}
 
-const PreloaderTick = setInterval(() => {
-  setTimeout(() => {
-    PreloaderAnswer.innerHTML = 'No';
-  }, 150);
-  setTimeout(() => {
-    PreloaderAnswer.innerHTML = 'Yes';
+const PreloaderTick = () => {
+  setInterval(() => {
+    setTimeout(() => {
+      PreloaderAnswer.innerHTML = 'No';
+    }, 150);
+    setTimeout(() => {
+      PreloaderAnswer.innerHTML = 'Yes';
+    }, 300);
   }, 300);
-}, 300);
+};
 
-const Scene = () => Art.forEach((e, i) => {
-  Art[0].classList.add('start');
-
-  setTimeout(() => {
-    Art[i + 1] ? Art[i + 1].classList.add('start') : null;
-    Count = Count + 1;
-
-    if (Count === Art.length) {
-      Puzzle[0].classList.add('start');
-
-      Count = Count + 1;
-
-      if (Count === Art.length + Puzzle.length) {
-        setTimeout(() => {
-          Finish[0].classList.add('start');
-          setTimeout(() => {
-            Finish[0].classList.add('play');
-            setTimeout(() => {
-              Finish[0].classList.remove('play');
-            }, 8000);
-          }, 20000);
-        }, 16500);
-      }
-    }
-  }, 11500 * (i + 1));
-});
+PreloaderTick();
 
 setTimeout(() => {
-  Preloader.classList.add('hide');
-  clearInterval(PreloaderTick);
-  setTimeout(() => {
-    Scene();
-    if (Art[0] === undefined && Puzzle[0] !== undefined) {
-      Count = Count + 1;
-      Puzzle[0].classList.add('start');
-    }
-    if (Art[0] === undefined && Puzzle[0] === undefined) {
-      Finish[0].classList.add('start');
-      setTimeout(() => {
-        Finish[0].classList.add('play');
-        setTimeout(() => {
-          Finish[0].classList.remove('play');
-        }, 8000);
-      }, 20000);
-    }
-    if (Art[0] === undefined && Puzzle[0] !== undefined) {
-      setTimeout(() => {
-        Finish[0].classList.add('start');
-      }, 16500);
-    }
-  }, 600);
-}, 2000);
+  Play.disabled = false;
+  Play.classList.add('show');
+}, 3000);
 
-GetLink.forEach(item => {
-  item.addEventListener('mouseover', () => {
-    Video.classList.add('play');
-    Video.play();
-    Video.addEventListener('ended', function () {
-      Video.currentTime = 3;
-    });
-    Video.addEventListener('timeupdate', function () {
-      if (Video.currentTime >= 8.2) {
-        Video.currentTime = 3;
-      }
-    });
-  });
-  item.addEventListener('mouseout', () => {
-    Video.classList.remove('play');
-    Video.pause();
-  });
+
+if (Width > 1600) {
+  VideoStart.src = '../assets/video/1920_track.mp4';
+} else if (Width <= 1600 && Width >= 1200) {
+  VideoStart.src = '../assets/video/1440_track.mp4';
+} else if (Width <= 1200 && Width >= 1024) {
+  VideoStart.src = '../assets/video/1024_track.mp4';
+} else {
+  VideoStart.src = '../assets/video/1284_track.mp4';
+}
+
+VideoStart.addEventListener('ended', () => {
+  VideoContainer.classList.add('hide');
+  if (Width < 1024) {
+    body.style.overflow = 'auto';
+    body.style.height = 'auto';
+    home.style.height = 'auto';
+    window.scrollBy(0, 0);
+  }
 });
 
+VideoHover.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+}, false);
+if (VideoHover.hasAttribute('controls')) {
+  VideoHover.removeAttribute('controls');
+}
+
+VideoSkip.addEventListener('click', () => {
+  VideoContainer.remove();
+  if (Width < 1024) {
+    body.style.overflow = 'auto';
+    body.style.height = 'auto';
+    home.style.height = 'auto';
+    window.scrollBy(0, 0);
+  }
+});
+
+Play.addEventListener('click', () => {
+  if (get_cookie('visited')) {
+    VideoSkip.classList.add('show');
+  }
+  document.cookie = 'visited=true; expires=' + date;
+  Preloader.classList.add('hide');
+  Play.classList.add('hide');
+  setTimeout(() => {
+    VideoStart.play();
+  }, 1500);
+});
+
+GetLink.forEach(item => {
+  item.addEventListener(('click'), (e) => {
+    e.preventDefault()
+  })
+  if (Width > 1024) {
+    item.addEventListener('mouseover', () => {
+      item.textContent = 'coming soon';
+      item.classList.add('white');
+      VideoHover.play();
+      VideoHover.classList.add('play');
+      VideoHover.addEventListener('ended', function () {
+        VideoHover.currentTime = 0;
+        VideoHover.play();
+      });
+    });
+    item.addEventListener('mouseout', () => {
+      item.textContent = 'get started';
+      item.classList.remove('white');
+      VideoHover.classList.remove('play');
+      VideoHover.pause();
+    });
+  } else {
+    item.addEventListener('click', (e) => {
+      item.textContent = 'coming soon';
+      item.classList.add('white');
+      VideoHover.play();
+      VideoHover.classList.add('play');
+      VideoHover.addEventListener('ended', function () {
+        VideoHover.currentTime = 0;
+        VideoHover.play();
+      });
+      setTimeout(() => {
+        item.textContent = 'get started';
+        item.classList.remove('white');
+        VideoHover.classList.remove('play');
+        VideoHover.pause();
+      }, 3000)
+    })
+  }
+});
+
+const Modal = document.querySelector('.modal');
+const ModalClose = document.querySelector('.modal__close');
+Subscribe.addEventListener('click', (e) => {
+  e.preventDefault();
+  Modal.classList.add('show');
+});
+ModalClose.addEventListener('click', () => {
+  Modal.classList.remove('show');
+});
