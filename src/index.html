@@ -6,20 +6,24 @@
 
 <div class="video">
   <span class="video__skip btn">skip intro</span>
-  <video class="video__item" playsinline controls>
-<!--    <source srcset="./assets/video/1284_track.mp4 1023w,-->
-<!--                    ./assets/video/1024_track.mp4 1199w,-->
-<!--                    ./assets/video/1440_track.mp4 1599w,-->
-<!--                    ./assets/video/1920_track.mp4 1600w"-->
-<!--            sizes="(max-width: 1024px) 1023px,-->
-<!--                    (max-width: 1200px) 1199px,-->
-<!--                    (max-width: 1600px) 1599px,-->
-<!--                    1600px"-->
-<!--            src="./asdasda"-->
-<!--            type='video/mp4'-->
-<!--    />-->
-    <source src="./assets/video/1920_track.mp4" type="video/mp4;" media="(min-width: 1600px)">
-  </video>
+  <canvas id="canvas" class="video__canvas">Sorry video is npt supported</canvas>
+<!--  <audio class="video__audio" controls>-->
+<!--    <source src="./assets/video/audio.mp3">-->
+<!--  </audio>-->
+<!--  <video class="video__item" playsinline controls>-->
+<!--&lt;!&ndash;    <source srcset="./assets/video/1284_track.mp4 1023w,&ndash;&gt;-->
+<!--&lt;!&ndash;                    ./assets/video/1024_track.mp4 1199w,&ndash;&gt;-->
+<!--&lt;!&ndash;                    ./assets/video/1440_track.mp4 1599w,&ndash;&gt;-->
+<!--&lt;!&ndash;                    ./assets/video/1920_track.mp4 1600w"&ndash;&gt;-->
+<!--&lt;!&ndash;            sizes="(max-width: 1024px) 1023px,&ndash;&gt;-->
+<!--&lt;!&ndash;                    (max-width: 1200px) 1199px,&ndash;&gt;-->
+<!--&lt;!&ndash;                    (max-width: 1600px) 1599px,&ndash;&gt;-->
+<!--&lt;!&ndash;                    1600px"&ndash;&gt;-->
+<!--&lt;!&ndash;            src="./asdasda"&ndash;&gt;-->
+<!--&lt;!&ndash;            type='video/mp4'&ndash;&gt;-->
+<!--&lt;!&ndash;    />&ndash;&gt;-->
+<!--    <source src="./assets/video/1920_track.mp4" type="video/mp4;" media="(min-width: 1600px)">-->
+<!--  </video>-->
 </div>
 
 <div class="home">
@@ -66,16 +70,15 @@
       <h2 class="modal__title">Join the ranks of <br> the PLANETA NOSTRA</h2>
 
       <div class="modal__label">
-        <input class="modal__label-input" type="email" placeholder="E-mail" required>
+        <input class="modal__label-input" type="email" placeholder="newuser@gmail.com" required>
         <button class="modal__label-btn btn">subscribe</button>
       </div>
 
-      <div class="modal__social">
-        <a href="#"><img src="./assets/img/discord.svg" alt=""></a>
-        <a href="#"><img src="./assets/img/twitter.svg" alt=""></a>
-      </div>
-
     </form>
+    <div class="modal__social">
+      <a href="#"><img src="./assets/img/discord.svg" alt=""></a>
+      <a href="#"><img src="./assets/img/twitter.svg" alt=""></a>
+    </div>
   </div>
 </div>
 

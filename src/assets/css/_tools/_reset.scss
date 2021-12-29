@@ -91,6 +91,10 @@ video {
   max-width: 100%;
 }
 
+canvas {
+  max-width: none;
+}
+
 /**
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.

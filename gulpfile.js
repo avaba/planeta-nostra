@@ -79,7 +79,7 @@ path.src.video[0] = path.src.srcPath + path.src.video[0];
 path.dist.video = path.dist.distPath + path.dist.video;
 
 path.watch.video = [];
-path.watch.video[0] = path.src.video[0].replace(path.src.video[0].split('/').pop(), '**/*.mp4');
+path.watch.video[0] = path.src.video[0].replace(path.src.video[0].split('/').pop(), '**/*.mp4', '**/*.mp3');
 
 /**
  * Images path
